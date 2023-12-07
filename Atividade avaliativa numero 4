@@ -64,7 +64,7 @@ Carro* cadastrar(Carro *lista){
     scanf("%d", &novoCarro->ano);z
     }
 
-    if(ano>=2010 && combustivel==diesel){
+    
     //verificar se a lista é nula
     if(lista == NULL){
         return novoCarro;
