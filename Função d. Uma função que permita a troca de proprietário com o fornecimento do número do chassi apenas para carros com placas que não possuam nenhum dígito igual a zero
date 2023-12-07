@@ -1,1 +1,149 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<time.h>
+typedef struct Carro{
+    char propietario[50];
+    char chassi[25];
+    char modelo[50];
+    char combustivel[50];
+    char cor[50];
+    int ano;
+    char placa[7];
+    struct Carro *prox;//ponteiro que armazena o endereco do proxima pessoa
+}Carro;
 
+Carro* criarListaVazia(){
+    return NULL;
+}
+
+//funcao para criar um novo registro
+Carro* criarCarro(){
+    Carro *novoCarro = (Carro*)malloc(sizeof(Carro));
+    if(novoCarro == NULL){
+        printf("\nErro de alocacao de memoria");
+        exit(EXIT_FAILURE);
+    }
+    novoCarro->prox = NULL;
+    return novoCarro;
+}
+Carro* cadastrar(Carro *lista){
+    srand(time(NULL));
+    Carro *novoCarro = criarCarro();
+    novoCarro->id = rand() % 100;
+         *atual = lista;
+    
+    printf("\nDigite o combustivel utilizado no veiculo: ");
+    fflush(stdin);
+    fgets(novoCarro->combustivel, sizeof(novoCarro->combustivel), stdin);
+
+    if(combustivel=!diesel\\combustivel=!gasolina\\combustivel=!alcool){
+
+        printf("\nCombustivel incompativel com o sistema, por favor insira um novo combustivel.");
+        fflush(stdin);
+        fgets(novoCarro->combustivel, sizeof(novoCarro->combustivel), stdin);
+    
+    } else{
+
+    printf("\nDigite o nome do propietario: ");
+    fflush(stdin);
+    fgets(novoCarro->propietario, sizeof(novoCarro->propietario), stdin);
+    
+    printf("\nInsira o chassi: ");
+    fflush(stdin);
+    fgets(novoCarro->chassi, sizeof(novoCarro->chassi), stdin);
+    
+    printf("\nDigite o modelo do carro: ");
+    fflush(stdin);
+    fgets(novoCarro->modelo, sizeof(novoCarro->modelo), stdin);
+    
+    printf("\nDigite a cor do carro: ");
+    fflush(stdin);
+    fgets(novoCarro->cor, sizeof(novoCarro->cor), stdin);
+    
+    printf("\nDigite o ano de lancamento do carro: ");
+    scanf("%d", &novoCarro->ano);
+    }
+
+    
+    //verificar se a lista é nula
+    if(lista == NULL){
+        return novoCarro;
+    }else{
+        Carro *atual = lista;
+        while(atual->prox != NULL){
+            atual = atual->prox;
+            //sai da repeticao quanto encontrar o elemento que aponta pra NULL
+        }
+        atual->prox = novoCarro;
+        return lista;//atualizar a lista 
+    }
+    else{
+        return=NULL;
+    }
+    
+}
+
+Carro* buscarCarro(Carro) *lista, char buscachassi){
+    Carro *atual = lista;
+        while(atual != NULL){
+            if(atual->id ==buscachassi){
+                printf("\nPropietario: %s", atual->propietario);
+                printf("\nModelo: %s", atual->modelo);
+                printf("\nChassi: %s", atual->chassi);
+                printf("\nCombustivel: %s", atual->combustivel);
+                printf("\nCor: %s", atual->cor);
+                printf("\nAno: %d", atual->ano);
+                printf("\nPlaca: %s", atual->placa;
+                return atual;
+            }
+            atual = atual->prox;
+        }
+    printf("Pessoa nao encontrada");
+    return NULL;
+ }
+
+ void alterar(Carro *Carro){
+    printf("A placa do carro em questao possui algum zero? Sim, ou Nao");
+      fgets(resposta, 4, stdin);
+
+    if(resposta==Nao){
+    printf("Digite o nome do novo propietario do veiculo");
+    fflush(stdin);
+    fgets(carro->propietario, sizeof(carro->propietario), stdin);
+    }
+    else{
+        printf("Sinto muito, mas nao e autorizada a troca deste veiculo");
+    }
+}
+ 
+ int main(){
+    char resposta[4];
+    int opcao;
+    char buscachassi[17];
+    Carro *lista = criarListaVazia();//sempre vai ser o primeiro da lista
+    
+    do{
+        printf("\nDigite 1 para cadastrar um carro");
+        printf("\nDigite 2 para trocar o propietario de um veiculo");
+        printf("\nDigite 0 para sair do sistema");
+        scanf("%d", &opcao);
+        switch(opcao){
+            case 1:
+                lista = cadastrar(lista);
+            break;
+            
+            case 2:
+                printf("\nDigite o chassi do carro para alteracao");
+                scanf("%d", &buscachassi);
+                encontrada = buscarCarro(lista, buscachassi);
+                if(encontrada != NULL){
+                    alterar(encontrada);
+                }
+            break;
+        }
+    }while(opcao != 0);
+
+    liberarLista(lista);
+
+return 0;
+}
