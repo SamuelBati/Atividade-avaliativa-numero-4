@@ -1,1 +1,111 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<time.h>
+typedef struct Carro{
+    char propietario[50];
+    char chassi[50];
+    char modelo[50];
+    char combustivel[50];
+    char cor[50];
+    int ano;
+    char placa[40];
+    struct Carro *prox;//ponteiro que armazena o endereco do proxima pessoa
+}Carro;
 
+Carro* criarListaVazia(){
+    return NULL;
+}
+
+//funcao para criar um novo registro
+Carro* criarCarro(){
+    Carro *novoCarro = (Carro*)malloc(sizeof(Carro));
+    if(novoCarro == NULL){
+        printf("\nErro de alocacao de memoria");
+        exit(EXIT_FAILURE);
+    }
+    novoCarro->prox = NULL;
+    return novoCarro;
+}
+Carro* cadastrar(Carro *lista){
+    srand(time(NULL));
+    Carro *novoCarro = criarCarro();
+    novoCarro->id = rand() % 100;
+         *atual = lista;
+    
+    printf("\nDigite o combustivel utilizado no veiculo: ");
+    fflush(stdin);
+    fgets(novoCarro->combustivel, sizeof(novoCarro->combustivel), stdin);
+
+    if(combustivel=!diesel\\combustivel=!gasolina\\combustivel=!alcool){
+
+        printf("\nCombustivel incompativel com o sistema, por favor insira um novo combustivel.");
+        fflush(stdin);
+        fgets(novoCarro->combustivel, sizeof(novoCarro->combustivel), stdin);
+    
+    } else{
+
+    printf("\nDigite o nome do propietario: ");
+    fflush(stdin);
+    fgets(novoCarro->propietario, sizeof(novoCarro->propietario), stdin);
+    
+    printf("\nInsira o chassi: ");
+    fflush(stdin);
+    fgets(novoCarro->chassi, sizeof(novoCarro->chassi), stdin);
+    
+    printf("\nDigite o modelo do carro: ");
+    fflush(stdin);
+    fgets(novoCarro->modelo, sizeof(novoCarro->modelo), stdin);
+    
+    printf("\nDigite a cor do carro: ");
+    fflush(stdin);
+    fgets(novoCarro->cor, sizeof(novoCarro->cor), stdin);
+    
+    printf("\nDigite o ano de lancamento do carro: ");
+    scanf("%d", &novoCarro->ano);
+    }
+
+    printf("Por favor nos diga, qual e o primeiro digito da sua placa")
+      fgets(&primeirodigito, 2, stdlib);
+    printf("Agora o ultimo");
+      scanf("%d", ultimonumero);
+
+    if(primeirodigito==j && (ultimonumero==0 \\ ultimonumero==2 \\ ultimonumero==4 \\ ultimonumero==7)){
+    //verificar se a lista é nula
+    if(lista == NULL){
+        return novoCarro;
+        return novoCarro;
+    }else{
+        Carro *atual = lista;
+        while(atual->prox != NULL){
+            atual = atual->prox;
+            //sai da repeticao quanto encontrar o elemento que aponta pra NULL
+        }
+        atual->prox = novoCarro;
+        return lista;//atualizar a lista 
+    }
+    }else{
+        return=NULL;
+    }
+    
+}
+ 
+ int main(){
+    char primeirodigito[2];
+    int ultimonumero;
+    int opcao;
+    Carro *lista = criarListaVazia();//sempre vai ser o primeiro da lista
+    do{
+        printf("\nDigite 1 para cadastrar um carro");
+        printf("\nDigite 0 para sair do sistema");
+        scanf("%d", &opcao);
+        switch(opcao){
+            case 1:
+                lista = cadastrar(lista);
+            break;
+        }
+    }while(opcao != 0);
+
+    liberarLista(lista);
+
+return 0;
+}
