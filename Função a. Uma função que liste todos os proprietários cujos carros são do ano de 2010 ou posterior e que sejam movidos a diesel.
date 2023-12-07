@@ -88,6 +88,10 @@ Carro* cadastrar(Carro *lista){
     acervo.proximo=NULL;
     additem(&acervo);
 
+    struct placasolista acervo1;
+    acervo1.proximo1=NULL;
+    additem1(&acervo1);
+
     int opcao;
     Carro *lista = criarListaVazia();//sempre vai ser o primeiro da lista
     do{
