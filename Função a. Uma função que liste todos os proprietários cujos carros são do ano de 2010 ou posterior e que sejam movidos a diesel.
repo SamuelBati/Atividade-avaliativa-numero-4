@@ -61,7 +61,7 @@ Carro* cadastrar(Carro *lista){
     fgets(novoCarro->cor, sizeof(novoCarro->cor), stdin);
     
     printf("\nDigite o ano de lancamento do carro: ");
-    scanf("%d", &novoCarro->ano);
+    scanf("%d", &novoCarro->ano);z
     }
 
     if(ano>=2010 && combustivel==diesel){
@@ -84,6 +84,10 @@ Carro* cadastrar(Carro *lista){
 }
  
  int main(){
+    struct propietariolista acervo;
+    acervo.proximo=NULL;
+    additem(&acervo);
+
     int opcao;
     Carro *lista = criarListaVazia();//sempre vai ser o primeiro da lista
     do{
